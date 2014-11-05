@@ -13,6 +13,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: fi.iki.elonen:nanohttpd:2.1.0" level="project" />
     <orderEntry type="library" name="Maven: fi.iki.elonen:nanohttpd-webserver:2.1.0" level="project" />
+    <orderEntry type="library" name="Maven: fi.iki.elonen:nanohttpd-websocket:2.1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.mockito:mockito-all:1.9.5" level="project" />
   </component>
 </module>
 
