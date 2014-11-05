@@ -25,7 +25,7 @@ public class WebMonitor {
         server = new Server(port);
 
         startServer();
-        System.out.println("Server is started on port " + port + ". Press enter to stop the server.");
+        System.out.println("Server is started on 0.0.0.0:" + port + ". Press enter to stop the server.");
 
         try {
             System.in.read();

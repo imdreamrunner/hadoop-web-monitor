@@ -26,7 +26,7 @@ public class Server extends NanoHTTPD {
         logger.log(Level.FINE, method + " '" + uri + "' ");
 
         String msg = "Hello World!";
-       
+
         return new NanoHTTPD.Response(msg);
     }
 }
