@@ -1,0 +1,657 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ledcon",
+				"AppTaskLEDControlTCB"
+			],
+			[
+				"al",
+				"all_right"
+			],
+			[
+				"on",
+				"onOptionsItemSelected"
+			],
+			[
+				"oncre",
+				"onCreateOptionsMenu"
+			],
+			[
+				"cur",
+				"cur_b"
+			],
+			[
+				"ret",
+				"return"
+			],
+			[
+				"re",
+				"ret"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "NotDriver.java",
+			"settings":
+			{
+				"buffer_size": 722,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "NotMapper.java",
+			"settings":
+			{
+				"buffer_size": 670,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "NotReducer.java",
+			"settings":
+			{
+				"buffer_size": 569,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Test.java",
+			"settings":
+			{
+				"buffer_size": 135,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 322.0,
+		"selected_items":
+		[
+			[
+				"",
+				"Build: CodeForces c++"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: re",
+				"Package Control: Remove Package"
+			]
+		],
+		"width": 528.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/F/GitHub/hadoop-web-monitor/src/not_main"
+	],
+	"file_history":
+	[
+		"/C/Users/Liyang/Desktop/hi.cpp",
+		"/C/xxxxxxx/Sublime Text Build 3065 x64/Data/Packages/C++/C++.sublime-build",
+		"/C/Users/Liyang/AppData/Local/Temp/7zOB432.tmp/AggregateWordCount.java",
+		"/F/GitHub/something/.gitignore",
+		"/F/GitHub/hadoop-web-monitor/pom.xml",
+		"/F/GitHub/hadoop-web-monitor/src/not_main/hadoop-project.sublime-project",
+		"/F/GitHub/hadoop-web-monitor/src/not_main/NotReducer.java",
+		"/F/GitHub/hadoop-web-monitor/src/not_main/NotMapper.java",
+		"/F/GitHub/hadoop-web-monitor/src/not_main/NotDriver.java",
+		"/F/GitHub/hadoop-web-monitor/src/not_main/Test.java",
+		"/F/GitHub/HHH/template.cpp",
+		"/F/Dropbox/Courses/URECA/__Y3__/URECA_2014/References/Haifeng_doc/siftextraction/src/main/java/rose/image/utility/ImageUtility.java",
+		"/F/Dropbox/Courses/URECA/__Y3__/URECA_2014/References/Haifeng_doc/siftextraction/src/test/java/rose/siftextraction/AppTest.java",
+		"/F/Dropbox/Courses/URECA/__Y3__/URECA_2014/References/Haifeng_doc/Scripts/run30k3.sh",
+		"/C/Users/Liyang/Desktop/to add to cheat sheet.txt",
+		"/F/GitHub/HHH/HHH/binary_indexed_tree.cpp",
+		"/C/Users/Liyang/Desktop/d.data",
+		"/C/Users/Liyang/Desktop/d.cpp",
+		"/C/Users/Liyang/Desktop/D-large.out",
+		"/C/Users/Liyang/Desktop/D-small-attempt1.out",
+		"/C/Users/Liyang/Desktop/D-small-attempt0.out",
+		"/C/Users/Liyang/Desktop/c.cpp",
+		"/C/Users/Liyang/Desktop/c.data",
+		"/C/Users/Liyang/Desktop/C-small-attempt0.in",
+		"/C/Users/Liyang/Desktop/C-small-attempt0.out",
+		"/C/Users/Liyang/Desktop/C-large.out",
+		"/C/Users/Liyang/Desktop/b.data",
+		"/C/Users/Liyang/Desktop/B-small-attempt0.out",
+		"/C/Users/Liyang/Desktop/b.cpp",
+		"/C/Users/Liyang/Desktop/B-large.out",
+		"/C/Users/Liyang/Desktop/a.data",
+		"/C/Users/Liyang/Desktop/a.cpp",
+		"/C/Users/Liyang/Desktop/A-small-attempt0.out",
+		"/F/GitHub/hub/hub/script/build",
+		"/C/Users/Liyang/Desktop/hi.go",
+		"/E/zz__Download__/hub_2.2.0-preview1_darwin_386/README.md",
+		"/F/GitHub/hadoop-web-monitor/src/main/resources/static/test.txt",
+		"/F/GitHub/hadoop-web-monitor/.gitignore",
+		"/F/GitHub/hadoop-web-monitor/WebMonitor.iml",
+		"/F/Dropbox/Courses/CE Y3 S1/CE3003/part 2/lab/lab 3/Lab3 - for assignment/main.c",
+		"/F/Dropbox/Courses/CE Y3 S1/CE3003/part 2/lab/lab 3/Lab3 - for assignment/app_cfg.h",
+		"/F/Dropbox/Courses/CE Y3 S1/CE3003/part 2/lab/lab 3/Lab3 - for assignment/EXT/motor_lib.h",
+		"/F/Dropbox/Courses/CE Y3 S1/CE3003/part 2/lab/lab 3/Lab3 - for assignment/EXT/motor_lib.c",
+		"/F/Dropbox/Courses/CE Y3 S1/CE3003/part 2/lab/lab 3/Lab3 - for assignment/includes.h",
+		"/F/Dropbox/Courses/CE Y3 S1/CE3003/part 2/lab/lab 3/Lab3/EXT/motor_lib.c",
+		"/C/Users/Liyang/AppData/Local/Temp/Temp1_min-project 2.zip/min-project/main.c",
+		"/F/Dropbox/Courses/CE Y3 S1/CE3003/part 2/lab/lab 3/Lab3 - for assignment/LED.h",
+		"/F/Dropbox/Courses/CE Y3 S1/CE3003/part 2/lab/lab 3/Lab3 - for assignment/LED.c",
+		"/F/Dropbox/Courses/CE Y3 S1/CE3003/part 2/lab/LED_Blink_v2/Lab1/main.c",
+		"/F/Dropbox/Courses/CE Y3 S1/CE3003/part 2/lab/lab 3/Lab3 - for assignment/probe_com_cfg.h",
+		"/F/Dropbox/Courses/CE Y3 S1/CE3003/part 2/lab/lab 3/Lab3 - for assignment/os_app_hooks.h",
+		"/F/Dropbox/Courses/CE Y3 S1/CE3003/part 2/lab/lab 3/Lab3 - for assignment/uC-LIB/lib_def.h",
+		"/F/Dropbox/Courses/CE Y3 S1/CE3003/part 2/lab/LED_Blink_v2/Lab1/LED.c",
+		"/F/Dropbox/Courses/CE Y3 S1/CE3003/part 2/lab/lab 1/Lab1_OS/main.c",
+		"/C/Users/Liyang/AppData/Local/Temp/Temp1_codesamples.zip/example.cpp",
+		"/C/Users/Liyang/Desktop/UVa10154.cpp",
+		"/C/Users/Liyang/Desktop/UVa10154.data",
+		"/C/Users/Liyang/Desktop/index.php",
+		"/C/Users/Liyang/Desktop/UVa10029.cpp",
+		"/F/Dropbox/Courses/CE Y3 S1/CZ3007/Lab/lab4/lab4/src/backend/StmtCodeGenerator.java",
+		"/F/Dropbox/Courses/CE Y3 S1/CZ3007/Lab/lab4/lab4/src/backend/ExprCodeGenerator.java",
+		"/F/Dropbox/Courses/CE Y3 S1/CE3003/part 2/lab/LED_Blink_v2/Lab1/LED.h",
+		"/C/Users/Liyang/Desktop/i.data",
+		"/C/Users/Liyang/Desktop/i.cpp",
+		"/C/Users/Liyang/Desktop/e.cpp",
+		"/C/Users/Liyang/Desktop/j.data",
+		"/C/Users/Liyang/Desktop/j.cpp",
+		"/C/Users/Liyang/Desktop/e.data",
+		"/F/GitHub/ntuOrangeJuice_cheetSheet/README.md",
+		"/C/Users/Liyang/Desktop/g.cpp",
+		"/C/Users/Liyang/Desktop/g.data",
+		"/F/Dropbox/Courses/CE Y3 S1/CE4062/Assignment/Group9/task1/task1.html",
+		"/F/GitHub/cz4062_project/php part/index.php",
+		"/F/Dropbox/Courses/CE Y3 S1/CE4062/Assignment/Anouncement.txt",
+		"/F/Program Files/mrjob-master/setup.py",
+		"/F/Program Files/wamp_win8/www/index.php",
+		"/C/Users/Liyang/Desktop/task1/task1.html",
+		"/C/Users/Liyang/Desktop/task2/task2.html",
+		"/C/Users/Liyang/Desktop/task1/task1.md",
+		"/C/Users/Liyang/Desktop/task2/task2.md",
+		"/C/Users/Liyang/Desktop/task1.html",
+		"/C/Users/Liyang/Desktop/task2.html",
+		"/C/Users/Liyang/Desktop/task2.md",
+		"/F/GitHub/cz4062_project/php part/contacts.txt",
+		"/F/GitHub/cz4062_project/.gitignore",
+		"/C/Users/Liyang/Desktop/PL3007-Compiler-master/part4-CodeGenerator/src/backend/StmtCodeGenerator.java",
+		"/F/Dropbox/Courses/CE Y3 S1/CZ3007/Lab/lab4/lab4/src/backend/FunctionCodeGenerator.java",
+		"/C/Users/Liyang/Desktop/PL3007-Compiler-master/part4-CodeGenerator/src/backend/ProgramCodeGenerator.java",
+		"/C/Users/Liyang/Desktop/PL3007-Compiler-master/part4-CodeGenerator/src/ast/Visitor.java",
+		"/C/Users/Liyang/Desktop/PL3007-Compiler-master/part4-CodeGenerator/src/backend/ExprCodeGenerator.java",
+		"/F/Dropbox/Courses/CE Y3 S1/CZ3007/Lab/lab4/lab4/src/runtime/Runtime.java",
+		"/F/Dropbox/Courses/CE Y3 S1/CZ3007/Lab/lab4/lab4/src/backend/ModuleCodeGenerator.java",
+		"/C/Users/Liyang/Desktop/PL3007-Compiler-master/part4-CodeGenerator/src/backend/FunctionCodeGenerator.java",
+		"/C/Users/Liyang/Desktop/PL3007-Compiler-master/part4-CodeGenerator/src/backend/ModuleCodeGenerator.java",
+		"/F/Dropbox/Courses/CE Y3 S1/CZ3007/Lab/lab4/lab4/src/backend/ProgramCodeGenerator.java",
+		"/F/Dropbox/Courses/CE Y3 S1/CZ3007/Lab/lab4/lab4/src/backend/SootTypeUtil.java",
+		"/C/Users/Liyang/Desktop/PL3007-Compiler-master/part4-CodeGenerator/src/backend/SootTypeUtil.java",
+		"/C/Users/Liyang/Desktop/PL3007-Compiler-master/part4-CodeGenerator/src/test/CompilerTests.java",
+		"/C/Users/Liyang/Desktop/4062 question.txt",
+		"/F/Dropbox/Courses/CE Y3 S1/CZ3007/Lab/lab3/lab3_solution/src/frontend/grammar.ast",
+		"/F/Dropbox/Courses/CE Y3 S1/CZ3007/Lab/lab4/lab4/src/test/CompilerTests.java",
+		"/F/Dropbox/Courses/CE Y3 S1/CZ3007/Lab/lab3/lab3_solution/src/frontend/names.jrag",
+		"/F/Dropbox/Courses/CE Y3 S1/CZ3007/Lab/lab2/lab2/Lab2/src/frontend/parser.beaver",
+		"/E/zz__Download__/examples/pointsto/src/dk/brics/paddle/PointsToAnalysis.java",
+		"/E/zz__Download__/examples/representations/jimple/JimpleExample.java",
+		"/E/zz__Download__/examples/analysis_framework/src/dk/brics/soot/RunLiveAnalysis.java",
+		"/F/GitHub/Something/rename/rename.py",
+		"/F/GitHub/cz4062_project/MyContact1/src/sg/com/ntu/cz4062/group9/contact/MyContacts.java",
+		"/F/GitHub/cz4062_project/MyWallpaper/AndroidManifest.xml",
+		"/C/xxxxxxx/eclipse/workspace/myExperiment/AndroidManifest.xml",
+		"/F/GitHub/cz4062_project/MyContact2/AndroidManifest.xml",
+		"/F/GitHub/cz4062_project/MyContact1/AndroidManifest.xml",
+		"/C/Users/Liyang/Desktop/ImmutableQueue-master/ImmutableQueue-master/ImmutableQueue.java",
+		"/C/Users/Liyang/Desktop/ImmutableQueue-master/ImmutableQueue-master/ImmutableQueueTest.java",
+		"/C/Users/Liyang/Desktop/run_cpp.bat",
+		"/E/zz__Download__/main.c",
+		"/C/Users/Liyang/Desktop/Motors.cpp",
+		"/C/Users/Liyang/Desktop/binary_indexed_tree.cpp",
+		"/C/Users/Liyang/Desktop/binary_indexed_tree.data",
+		"/F/GitHub/ntuOrangeJuice_cheetSheet/sources/bigint.cc",
+		"/F/GitHub/cz4062_project/MyContact0.1/src/com/android/example/contact/upload/UploadContacts.java",
+		"/C/Users/Liyang/AppData/Local/Temp/Temp1_CE4062 Computer Security Assignment.zip/CE4062 Computer Security Assignment/Group 29/MyWallpaper/src/ntu/edu/sg/ce4062/group29/mywallpaper/MainActivity.java",
+		"/C/Users/Liyang/AppData/Local/Temp/Temp1_CE4062 Computer Security Assignment.zip/CE4062 Computer Security Assignment/Group 29/MyWallpaper/AndroidManifest.xml",
+		"/C/Users/Liyang/AppData/Local/Temp/Temp1_CE4062 Computer Security Assignment.zip/CE4062 Computer Security Assignment/Group 29/MyContact1/src/ntu/edu/sg/ce4062/group29/mycontact1/MainActivity.java",
+		"/C/Users/Liyang/AppData/Local/Temp/Temp1_CE4062 Computer Security Assignment.zip/CE4062 Computer Security Assignment/Group 29/MyContact1/AndroidManifest.xml",
+		"/C/Users/Liyang/AppData/Local/Temp/Temp1_CE4062 Computer Security Assignment.zip/CE4062 Computer Security Assignment/Group 29/MyContact2/src/ntu/edu/sg/ce4062/group29/mycontact2/MainActivity.java",
+		"/C/Users/Liyang/AppData/Local/Temp/Temp1_CE4062 Computer Security Assignment.zip/CE4062 Computer Security Assignment/Group 29/MyContact2/AndroidManifest.xml",
+		"/C/Users/Liyang/AppData/Local/Temp/Temp1_CE4062 Computer Security Assignment.zip/CE4062 Computer Security Assignment/Group 29/zip files/web/index.php"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"temp",
+			"next",
+			"            \n",
+			"DEF_ON",
+			"\\t",
+			"                ",
+			"time",
+			"BSP_DisplayClear",
+			"ts",
+			"LED_enable",
+			"ts",
+			"size",
+			"stop_now",
+			"startTimer",
+			"bump_once",
+			"left_tgt",
+			"countl",
+			"printf",
+			"APP_MOTOR_RUN_PRIO",
+			"AppTaskLEDControl",
+			"APP_TASK_ROBOT_CONTROL_PRIO",
+			"rx_val",
+			"COUNTER_TURN",
+			"  ",
+			"style=\"max-width:[1-9]00%;",
+			"style=\"max-width:[1-9]0%;",
+			"style=\"max-width:100%;",
+			"style=\"max-width:50%;",
+			"style=\"max-width:100%;",
+			"img",
+			"arrayindex",
+			"booleanliteral",
+			"binary",
+			"_",
+			"Translates ",
+			"Java",
+			"Returns ",
+			"Return",
+			"priority_queue",
+			"最小",
+			">",
+			"inf",
+			"hash",
+			"  ",
+			"            \n",
+			"can",
+			"compare",
+			"prim",
+			"数",
+			"数学",
+			"math",
+			"数学",
+			"distance",
+			"move",
+			"drift",
+			"moveDrift",
+			"delay",
+			"avoid",
+			"moveForward",
+			"moveBackward",
+			"moveForward",
+			"setBrakes",
+			"collisionAvoid",
+			"AvoidObstacle",
+			"getSensorReading",
+			"turnRight",
+			"moveForwardandDrift",
+			"moveDrift",
+			"delay",
+			"drift",
+			"drifting",
+			"swe",
+			"R.",
+			"R",
+			"listener",
+			"ViewHolder",
+			"op[cur_y][cur_x]",
+			"op[cur_x][cur_y]",
+			"math",
+			"api",
+			"> <",
+			"><",
+			"binary_search",
+			"next_permutation",
+			"priority_qu",
+			"```",
+			"线段",
+			"线段树",
+			"map",
+			"最大",
+			"中国",
+			"stack",
+			"gram",
+			"length",
+			"__y__",
+			"__x__",
+			"x",
+			"x ",
+			"__x__",
+			"show",
+			"TESTING",
+			"binary_search",
+			"smoothByMedian",
+			"547",
+			"FLC",
+			"#### ",
+			"map",
+			";\n",
+			"kk ",
+			"#####",
+			"####",
+			"x",
+			"1000",
+			"xxx",
+			"long",
+			"    ",
+			"  ",
+			"int ",
+			"yy",
+			"xx",
+			"new string",
+			",",
+			"[ \\n]+",
+			",,",
+			"\\n",
+			"[ ]+",
+			"[ ]*",
+			"\\.\\.\\."
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"next_city",
+			"\\t",
+			"  ",
+			"style=\"max-width:50%;",
+			"\\t",
+			"style=\"max-width:50%;",
+			"// Translates ",
+			"// Returns ",
+			"my_hash",
+			"\\t",
+			"can_kill",
+			"cur_op",
+			"op[cur_y][cur_x]",
+			"my_stack",
+			"y",
+			"x",
+			"##### ",
+			"board",
+			"kkk",
+			"####",
+			"#####",
+			"9",
+			"1000",
+			"\\t",
+			"    ",
+			"long long ",
+			"pre_y",
+			"pre_x",
+			",",
+			"",
+			",",
+			"\\,",
+			",",
+			"\\.\\.\\.\\n",
+			"...\\n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": true,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "NotDriver.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 722,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								714,
+								714
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "NotMapper.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 670,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								670,
+								670
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "NotReducer.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 569,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Test.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 135,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								133,
+								133
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 252.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "hadoop-project.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"hi",
+				"C:\\Users\\Liyang\\Desktop\\hi.cpp"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"last_automatic_layout":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		]
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 177.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
