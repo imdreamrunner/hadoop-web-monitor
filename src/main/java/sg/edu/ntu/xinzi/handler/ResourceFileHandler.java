@@ -15,6 +15,6 @@ public class ResourceFileHandler extends RequestHandler {
         String uri = session.getUri();
         String fileName = uri.substring(uri.indexOf("/", 1) + 1);
         logger.log(Level.FINE, "Searching for file \"" + fileName + "\" on static folder.");
-        return responseFile(fileName);
+        return responseFile("static/" + fileName);
     }
 }

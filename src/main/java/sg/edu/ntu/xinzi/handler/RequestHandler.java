@@ -67,8 +67,8 @@ public abstract class RequestHandler {
 
     protected Response responseFile(String fileName) {
         try {
-            URL resource = getClass().getResource("/static/" + fileName);
-            InputStream is = getClass().getResourceAsStream("/static/" + fileName);
+            URL resource = getClass().getResource("/" + fileName);
+            InputStream is = getClass().getResourceAsStream("/" + fileName);
             if (resource == null || is.available() == 0) {
                 throw new FileNotFoundException();
             }
