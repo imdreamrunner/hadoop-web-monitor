@@ -1,23 +1,42 @@
 package not_main;
 
 public class NotDriver {
+    static enum RecordCounters { IMAGE_SUBMITTED, IMAGE_PROCESSED };
+
     public static void main(String[] args) throws Exception {
-        JobConf conf = new JobConf(NotDriver.class);
-        conf.setJobName("notJob");
+        Configuration conf = new Configuration();
 
-        conf.setOutputKeyClass(/* Key.class */);
-        conf.setOutputValueClass(/* Value.class */);
+        Job job = Job.getInstance(conf, "not a job");
 
-        conf.setMapperClass(NotMapper.class);
-        conf.setCombinerClass(NotReducer.class);
-        conf.setReducerClass(NotReducer.class);
+        // job.setJarByClass(WordCount2.class);
 
-        conf.setInputFormat(/* InputFormat.class */);
-        conf.setOutputFormat(/* OutputFormat.class */);
+        job.setInputFormatClass(NotInputFormat.class);
+        job.setMapperClass(NotMapper.class);
+        job.setMapOutputKeyClass(Text.class);
+        job.setMapOutputValueClass(NotFeatureWritable.class);
 
-        FileInputFormat.setInputPaths(conf, new Path(args[0]));
-        FileOutputFormat.setOutputPath(conf, new Path(args[1]));
+        // job.setCombinerClass(NotCombiner.class);
+        // job.setPartitionerClass(NotPartitioner.class);
 
-        JobClient.runJob(conf);
+        // job.setReducerClass(NotReducer.class);
+        // job.setOutputKeyClass(Text.class);
+        // job.setOutputValueClass(IntWritable.class);
+        job.setOutputFormatClass(NotOutputFormat.class);
+
+        
+        job.setNumReduceTasks(0); // directly write to file system, without calling reducer
+        job.setSpeculativeExecution(true);
+
+        FileInputFormat.addInputPath(job, new Path(args[0])); // provide input directory
+        FileOutputFormat.setOutputPath(job, new Path(args[1]));
+
+        // System.exit(job.waitForCompletion(true) ? 0 : 1); // .waitFor... will submit the job
+        // or 
+        RunningJob runningJob = runJob(job); // or use submitJob()
+
+        int imageSubmitted = RunningJob.getCounters(RecordCounters.IMAGE_SUBMITTED);
+        int imageProcessed = RunningJob.getCounters(RecordCounters.IMAGE_PROCESSED);
     }
 }
+
+// set mapreduce.framework.name to "local" / "classic" / "yarn"
