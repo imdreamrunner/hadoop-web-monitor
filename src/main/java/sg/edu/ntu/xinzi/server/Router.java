@@ -16,8 +16,14 @@ public class Router {
     private List<RouteRecord> records = new ArrayList<RouteRecord>();
 
     public void add(NanoHTTPD.Method method, String uri, Class handler) {
-        RouteRecord record = new RouteRecord(method, uri, handler);
-        records.add(record);
+        RouteRecord record = null;
+        try {
+            record = new RouteRecord(method, uri, handler);
+            records.add(record);
+        } catch (InvalidHandlerException e) {
+            logger.log(Level.SEVERE, "Invalid handler");
+            e.printStackTrace();
+        }
     }
 
     public NanoHTTPD.Response handle(NanoHTTPD.IHTTPSession session) {
@@ -51,7 +57,10 @@ public class Router {
         public NanoHTTPD.Method method;
         public String uri;
         public Class<RequestHandler> handler;
-        public RouteRecord(NanoHTTPD.Method method, String uri, Class handler) {
+        public RouteRecord(NanoHTTPD.Method method, String uri, Class handler) throws InvalidHandlerException {
+            if (!RequestHandler.class.isAssignableFrom(handler)) {
+                throw new InvalidHandlerException();
+            }
             this.method = method;
             this.uri = uri;
             this.handler = handler;
