@@ -1,5 +1,11 @@
-rm -R ./target/
+if [ ./target/ ];
+then
+    rm -R ./target/
+fi
 echo "Start packaging..."
 mvn package
-echo "Done packaging, start running..."
-cd target && java -jar web-monitor-*-jar-with-dependencies.jar
+if [ ./target/web-monitor-*-jar-with-dependencies.jar ];
+then
+    echo "Done packaging, start running..."
+    cd target && java -jar web-monitor-*-jar-with-dependencies.jar
+fi
