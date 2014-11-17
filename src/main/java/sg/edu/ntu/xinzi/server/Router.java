@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 public class Router {
     private static Logger logger = Log.getLogger();
 
-    private List<RouteRecord> records = new ArrayList<RouteRecord>();
+    private List<RouteRecord> records = new ArrayList<>();
 
     public void add(NanoHTTPD.Method method, String uri, Class handler) {
         RouteRecord record = null;
@@ -57,13 +57,15 @@ public class Router {
         public NanoHTTPD.Method method;
         public String uri;
         public Class<RequestHandler> handler;
+        @SuppressWarnings("uncheck")
         public RouteRecord(NanoHTTPD.Method method, String uri, Class handler) throws InvalidHandlerException {
-            if (!RequestHandler.class.isAssignableFrom(handler)) {
+            if (RequestHandler.class.isAssignableFrom(handler)) {
+                this.method = method;
+                this.uri = uri;
+                this.handler = handler;
+            } else {
                 throw new InvalidHandlerException();
             }
-            this.method = method;
-            this.uri = uri;
-            this.handler = handler;
         }
         public boolean match(String uri) {
             return uri.matches(this.uri);
