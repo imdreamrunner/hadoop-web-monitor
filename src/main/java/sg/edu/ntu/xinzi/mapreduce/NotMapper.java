@@ -12,7 +12,7 @@ import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class NotMapper extends Mapper<Text, BytesWritable, Text, NotFeatureWritable> {
+public class NotMapper extends Mapper<Text, BytesWritable, Text, Text> {
     private static Logger logger = Log.getLogger();
 
     @Override
@@ -34,7 +34,8 @@ public class NotMapper extends Mapper<Text, BytesWritable, Text, NotFeatureWrita
         NotFeatureWritable result = new NotFeatureWritable();
 
         context.getCounter(NotDriver.RecordCounters.IMAGE_PROCESSED).increment(1);
-        context.write(key, result);
+        // context.write(key, result);
+        context.write(key, new Text("temp result"));
     }
 
     public static byte[] serialize(Writable writable) throws IOException {

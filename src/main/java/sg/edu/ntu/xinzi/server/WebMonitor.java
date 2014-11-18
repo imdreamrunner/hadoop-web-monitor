@@ -13,7 +13,7 @@ public class WebMonitor {
 
     public static void main(String[] args) {
         System.out.println("Welcome to Web Monitor.");
-        int port = 8080;
+        int port = 40080;
         if (args.length > 0) {
             try {
                 port = Integer.parseInt(args[0]);
