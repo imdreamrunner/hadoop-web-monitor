@@ -23,7 +23,8 @@ public class NotInputFormat extends FileInputFormat<Text, BytesWritable> {
     }
 
     @Override
-    public RecordReader<Text, BytesWritable> createRecordReader(InputSplit split, TaskAttemptContext context) throws IOException, InterruptedException {
+    public RecordReader<Text, BytesWritable> createRecordReader(InputSplit split, TaskAttemptContext context)
+            throws IOException, InterruptedException {
         logger.log(Level.INFO, "Create record reader.");
         NotRecordReader reader = new NotRecordReader();
         reader.initialize(split, context);

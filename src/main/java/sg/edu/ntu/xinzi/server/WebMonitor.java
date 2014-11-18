@@ -23,6 +23,9 @@ public class WebMonitor {
             }
         }
 
+        NotDriver.run();
+
+        /*
         server = new Server(port);
 
         startServer();
@@ -37,6 +40,7 @@ public class WebMonitor {
         System.out.println("Server is stopped. Thank you for using.");
 
         System.exit(0);
+        */
     }
 
     private static void startServer() {

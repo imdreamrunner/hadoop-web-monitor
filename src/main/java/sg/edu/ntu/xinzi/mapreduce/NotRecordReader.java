@@ -37,6 +37,7 @@ public class NotRecordReader extends RecordReader<Text, BytesWritable> {
 
     @Override
     public boolean nextKeyValue() throws IOException, InterruptedException {
+        logger.log(Level.INFO, "Record reader get next key value.");
         if (!processed) {
             key = new Text(fileSplit.getPath().getName());
 

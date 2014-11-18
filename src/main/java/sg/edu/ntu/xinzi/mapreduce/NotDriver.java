@@ -41,16 +41,20 @@ public class NotDriver {
             // job.setReducerClass(NotReducer.class);
             // job.setOutputKeyClass(Text.class);
             // job.setOutputValueClass(IntWritable.class);
-            job.setOutputFormatClass(NotOutputFormat.class);
-
+            // job.setOutputFormatClass(NotOutputFormat.class);
 
             job.setNumReduceTasks(0); // directly write to file system, without calling reducer
             job.setSpeculativeExecution(true);
 
-            FileInputFormat.addInputPath(job, new Path("/input")); // provide input directory
-            FileOutputFormat.setOutputPath(job, new Path("/output"));
+            FileInputFormat.addInputPath(job, new Path("/input/")); // provide input directory
+            FileOutputFormat.setOutputPath(job, new Path("/output/"));
 
-            System.exit(job.waitForCompletion(true) ? 0 : 1); // .waitFor... will submit the job
+            logger.log(Level.INFO, "Waiting for completion.");
+            if (job.waitForCompletion(true)) {
+                logger.log(Level.INFO, "Job completed.");
+            } else {
+                logger.log(Level.SEVERE, "Job error.");
+            }
             // or
             // RunningJob runningJob = runJob(job); // or use submitJob()
 
