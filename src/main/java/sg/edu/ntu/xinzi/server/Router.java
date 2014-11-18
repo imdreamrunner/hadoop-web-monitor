@@ -57,7 +57,7 @@ public class Router {
         public NanoHTTPD.Method method;
         public String uri;
         public Class<RequestHandler> handler;
-        @SuppressWarnings("uncheck")
+        @SuppressWarnings("unchecked")
         public RouteRecord(NanoHTTPD.Method method, String uri, Class handler) throws InvalidHandlerException {
             if (RequestHandler.class.isAssignableFrom(handler)) {
                 this.method = method;

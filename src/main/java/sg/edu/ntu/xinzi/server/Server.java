@@ -2,6 +2,7 @@ package sg.edu.ntu.xinzi.server;
 
 import fi.iki.elonen.NanoHTTPD;
 import sg.edu.ntu.xinzi.handler.IndexHandler;
+import sg.edu.ntu.xinzi.handler.JobRunHandler;
 import sg.edu.ntu.xinzi.handler.ResourceFileHandler;
 import sg.edu.ntu.xinzi.util.Log;
 
@@ -16,6 +17,7 @@ public class Server extends NanoHTTPD {
     private static final Router router = new Router() {{
         add(Method.GET, "^/$", IndexHandler.class);
         add(Method.GET, "^/static/.*", ResourceFileHandler.class);
+        add(Method.GET, "^/run", JobRunHandler.class);
     }};
 
     public Server(int port) {

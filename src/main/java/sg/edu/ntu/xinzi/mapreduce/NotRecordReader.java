@@ -11,10 +11,15 @@ import org.apache.hadoop.mapreduce.InputSplit;
 import org.apache.hadoop.mapreduce.RecordReader;
 import org.apache.hadoop.mapreduce.TaskAttemptContext;
 import org.apache.hadoop.mapreduce.lib.input.FileSplit;
+import sg.edu.ntu.xinzi.util.Log;
 
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class NotRecordReader extends RecordReader<Text, BytesWritable> {
+    private static Logger logger = Log.getLogger();
+
     // <key, value> <file name, file contents in bytes>
 
     private FileSplit fileSplit;
@@ -25,6 +30,7 @@ public class NotRecordReader extends RecordReader<Text, BytesWritable> {
 
     @Override
     public void initialize(InputSplit split, TaskAttemptContext context) throws IOException, InterruptedException {
+        logger.log(Level.INFO, "Record reader start initializing.");
         this.fileSplit = (FileSplit) split;
         this.conf = context.getConfiguration();
     }

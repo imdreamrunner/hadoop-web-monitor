@@ -6,44 +6,60 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+import sg.edu.ntu.xinzi.util.Log;
+
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class NotDriver {
     static enum RecordCounters { IMAGE_SUBMITTED, IMAGE_PROCESSED };
 
-    public static void main(String[] args) throws Exception {
-        Configuration conf = new Configuration();
+    private static Logger logger = Log.getLogger();
 
-        Job job = Job.getInstance(conf, "not a job");
+    public static void run() {
+        logger.log(Level.INFO, "Map driver starts running.");
+        try {
+            Configuration conf = new Configuration();
 
-        // job.setJarByClass(WordCount2.class);
+            conf.set("fs.file.impl", org.apache.hadoop.fs.LocalFileSystem.class.getName());
+            conf.set("fs.hdfs.impl", org.apache.hadoop.hdfs.DistributedFileSystem.class.getName());
+            conf.set("fs.default.name", "hdfs://localhost:9000");
 
-        job.setInputFormatClass(NotInputFormat.class);
-        job.setMapperClass(NotMapper.class);
-        job.setMapOutputKeyClass(Text.class);
-        job.setMapOutputValueClass(NotFeatureWritable.class);
+            Job job = Job.getInstance(conf, "not a job");
 
-        // job.setCombinerClass(NotCombiner.class);
-        // job.setPartitionerClass(NotPartitioner.class);
+            // job.setJarByClass(WordCount2.class);
 
-        // job.setReducerClass(NotReducer.class);
-        // job.setOutputKeyClass(Text.class);
-        // job.setOutputValueClass(IntWritable.class);
-        job.setOutputFormatClass(NotOutputFormat.class);
+            job.setInputFormatClass(NotInputFormat.class);
+            job.setMapperClass(NotMapper.class);
+            job.setMapOutputKeyClass(Text.class);
+            job.setMapOutputValueClass(NotFeatureWritable.class);
+
+            // job.setCombinerClass(NotCombiner.class);
+            // job.setPartitionerClass(NotPartitioner.class);
+
+            // job.setReducerClass(NotReducer.class);
+            // job.setOutputKeyClass(Text.class);
+            // job.setOutputValueClass(IntWritable.class);
+            job.setOutputFormatClass(NotOutputFormat.class);
 
 
-        job.setNumReduceTasks(0); // directly write to file system, without calling reducer
-        job.setSpeculativeExecution(true);
+            job.setNumReduceTasks(0); // directly write to file system, without calling reducer
+            job.setSpeculativeExecution(true);
 
-        FileInputFormat.addInputPath(job, new Path(args[0])); // provide input directory
-        FileOutputFormat.setOutputPath(job, new Path(args[1]));
+            FileInputFormat.addInputPath(job, new Path("/input")); // provide input directory
+            FileOutputFormat.setOutputPath(job, new Path("/output"));
 
-        System.exit(job.waitForCompletion(true) ? 0 : 1); // .waitFor... will submit the job
-        // or
-        // RunningJob runningJob = runJob(job); // or use submitJob()
+            System.exit(job.waitForCompletion(true) ? 0 : 1); // .waitFor... will submit the job
+            // or
+            // RunningJob runningJob = runJob(job); // or use submitJob()
 
         /*
         int imageSubmitted = RunningJob.getCounters(RecordCounters.IMAGE_SUBMITTED);
         int imageProcessed = RunningJob.getCounters(RecordCounters.IMAGE_PROCESSED);
         */
+        } catch (IOException | ClassNotFoundException | InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
