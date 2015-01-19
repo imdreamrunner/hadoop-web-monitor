@@ -14,4 +14,4 @@ However an run script is provided for fast testing, you can simply run it by `sh
 
 ### NanoHTTPD
 
-Please download it [here](https://github.com/NanoHttpd/nanohttpd) and install it with Maven with `mvn install`.
+Please download it [here](https://github.com/NanoHttpd/nanohttpd) and install it with Maven with `sudo mvn install` (root privileges required).
