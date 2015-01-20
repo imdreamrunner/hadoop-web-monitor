@@ -13,6 +13,9 @@ public class ResourceFileHandler extends RequestHandler {
     @Override
     public Response getResponse(IHTTPSession session) {
         String uri = session.getUri();
+        if (uri.equals("/")) {
+            return responseFile("index.html");
+        }
         String fileName = uri.substring(uri.indexOf("/", 1) + 1);
         logger.log(Level.FINE, "Searching for file \"" + fileName + "\" on static folder.");
         return responseFile("static/" + fileName);

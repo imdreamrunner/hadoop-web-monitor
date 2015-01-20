@@ -8,7 +8,12 @@ Please build the project with Maven.
 mvn package
 ```
 
-However an run script is provided for fast testing, you can simply run it by `sh run.sh` or `./run.sh`.
+However an run script is provided for fast testing, you can simply run it by the following commands.
+
+```bash
+chmod +x run.sh   # only need to be run for once.
+./run.sh
+```
 
 ## Dependencies
 
