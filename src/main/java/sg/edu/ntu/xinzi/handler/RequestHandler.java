@@ -1,5 +1,6 @@
 package sg.edu.ntu.xinzi.handler;
 
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import fi.iki.elonen.NanoHTTPD;
 import fi.iki.elonen.NanoHTTPD.Response;
 import fi.iki.elonen.NanoHTTPD.IHTTPSession;
@@ -18,6 +19,7 @@ public abstract class RequestHandler {
     private static Logger logger = Log.getLogger();
 
     public static final String MIME_DEFAULT_BINARY = "application/octet-stream";
+    public static final String MIME_JSON = "application/json";
     private static final Map<String, String> MIME_TYPES = new HashMap<String, String>() {{
         put("css", "text/css");
         put("htm", "text/html");
@@ -67,8 +69,8 @@ public abstract class RequestHandler {
 
     protected Response responseFile(String fileName) {
         try {
-            URL resource = getClass().getResource("/" + fileName);
-            InputStream is = getClass().getResourceAsStream("/" + fileName);
+            URL resource = getClass().getResource("/web/" + fileName);
+            InputStream is = getClass().getResourceAsStream("/web/" + fileName);
             if (resource == null || is.available() == 0) {
                 throw new FileNotFoundException();
             }
@@ -89,6 +91,10 @@ public abstract class RequestHandler {
             // e.printStackTrace();
             return responseNotFound();
         }
+    }
+
+    public Response responseJson(ObjectNode node) {
+        return new Response(Response.Status.OK, MIME_JSON, node.toString());
     }
 
     private String getMimeTypeForFile(String fileName) {
