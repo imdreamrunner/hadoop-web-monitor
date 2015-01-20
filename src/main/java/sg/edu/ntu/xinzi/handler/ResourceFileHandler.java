@@ -13,11 +13,13 @@ public class ResourceFileHandler extends RequestHandler {
     @Override
     public Response getResponse(IHTTPSession session) {
         String uri = session.getUri();
+        String fileName;
         if (uri.equals("/")) {
-            return responseFile("index.html");
+            fileName = "index.html";
+        } else {
+            fileName = uri.substring(1);
         }
-        String fileName = uri.substring(uri.indexOf("/", 1) + 1);
         logger.log(Level.FINE, "Searching for file \"" + fileName + "\" on static folder.");
-        return responseFile("static/" + fileName);
+        return responseFile(fileName);
     }
 }
