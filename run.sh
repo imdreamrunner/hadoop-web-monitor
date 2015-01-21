@@ -1,6 +1,6 @@
 if [ -d ./target/ ];
 then
-    rm -R ./target/
+    mvn clean
 fi
 echo "Start packaging..."
 mvn package
