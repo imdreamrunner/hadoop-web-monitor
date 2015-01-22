@@ -93,10 +93,6 @@ public abstract class RequestHandler {
         }
     }
 
-    public Response responseJson(ObjectNode node) {
-        return new Response(Response.Status.OK, MIME_JSON, node.toString());
-    }
-
     private String getMimeTypeForFile(String fileName) {
         int dot = fileName.lastIndexOf('.');
         String extension = fileName.substring(dot + 1).toLowerCase();
@@ -105,6 +101,17 @@ public abstract class RequestHandler {
             mime = MIME_TYPES.get(extension);
         }
         return mime == null ? MIME_DEFAULT_BINARY : mime;
+    }
+
+    protected Response responseJson(ObjectNode node) {
+        return new Response(Response.Status.OK, MIME_JSON, node.toString());
+    }
+
+    protected Response responseRedirect(String url) {
+        Response response = new Response(Response.Status.REDIRECT, NanoHTTPD.MIME_HTML, "<html><body><a href=\"" +
+                url + "\">Redirected</a></body></html>");
+        response.addHeader("Location", url);
+        return response;
     }
 
     public static class RequestUnhandledException extends Exception{};
