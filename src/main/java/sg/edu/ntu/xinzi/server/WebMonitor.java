@@ -12,7 +12,7 @@ public class WebMonitor {
     private static Server server;
 
     public static void main(String[] args) {
-        System.out.println("Welcome to Web Monitor.");
+        logger.info("Welcome to Web Monitor.");
         int port = 40080;
         if (args.length > 0) {
             try {
@@ -23,22 +23,21 @@ public class WebMonitor {
             }
         }
 
-        if (false) {
-            NotDriver.run();
-        }
 
-        server = new Server(port);
+        NotDriver.run();
 
-        startServer();
-        System.out.println("Server is started on 0.0.0.0:" + port + ". Press enter to stop the server.");
-
-        try {
-            System.in.read();
-        } catch (Throwable ignored) {
-        }
-
-        stopServer();
-        System.out.println("Server is stopped. Thank you for using.");
+//        server = new Server(port);
+//
+//        startServer();
+//        System.out.println("Server is started on 0.0.0.0:" + port + ". Press enter to stop the server.");
+//
+//        try {
+//            System.in.read();
+//        } catch (Throwable ignored) {
+//        }
+//
+//        stopServer();
+//        System.out.println("Server is stopped. Thank you for using.");
 
         System.exit(0);
     }

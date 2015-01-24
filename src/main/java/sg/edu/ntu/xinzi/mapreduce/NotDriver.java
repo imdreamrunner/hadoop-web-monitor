@@ -5,6 +5,7 @@ import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.input.InvalidInputException;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import sg.edu.ntu.xinzi.util.Log;
 
@@ -18,13 +19,13 @@ public class NotDriver {
     private static Logger logger = Log.getLogger();
 
     public static void run() {
-        logger.log(Level.INFO, "Map driver starts running.");
+        logger.log(Level.INFO, "Configuring Hadoop job.");
         try {
             Configuration conf = new Configuration();
 
-            conf.set("fs.file.impl", org.apache.hadoop.fs.LocalFileSystem.class.getName());
-            conf.set("fs.hdfs.impl", org.apache.hadoop.hdfs.DistributedFileSystem.class.getName());
-            conf.set("fs.default.name", "hdfs://localhost:9000");
+//            conf.set("fs.file.impl", org.apache.hadoop.fs.LocalFileSystem.class.getName());
+//            conf.set("fs.hdfs.impl", org.apache.hadoop.hdfs.DistributedFileSystem.class.getName());
+//            conf.set("fs.default.name", "hdfs://localhost:9000");
 
             Job job = Job.getInstance(conf, "not a job");
 
@@ -49,7 +50,7 @@ public class NotDriver {
             FileInputFormat.addInputPath(job, new Path("/input/")); // provide input directory
             FileOutputFormat.setOutputPath(job, new Path("/output/"));
 
-            logger.log(Level.INFO, "Waiting for completion.");
+            logger.log(Level.INFO, "Start running Hadoop job.");
             if (job.waitForCompletion(true)) {
                 logger.log(Level.INFO, "Job completed.");
             } else {
@@ -63,6 +64,7 @@ public class NotDriver {
         int imageProcessed = RunningJob.getCounters(RecordCounters.IMAGE_PROCESSED);
         */
         } catch (IOException | ClassNotFoundException | InterruptedException e) {
+            logger.log(Level.SEVERE, "Exception during execution.");
             e.printStackTrace();
         }
     }
