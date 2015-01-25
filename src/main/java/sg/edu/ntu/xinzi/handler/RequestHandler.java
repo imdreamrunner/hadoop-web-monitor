@@ -4,7 +4,8 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import fi.iki.elonen.NanoHTTPD;
 import fi.iki.elonen.NanoHTTPD.Response;
 import fi.iki.elonen.NanoHTTPD.IHTTPSession;
-import sg.edu.ntu.xinzi.util.Log;
+import org.apache.commons.logging.Log;
+import sg.edu.ntu.xinzi.util.Logger;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -13,10 +14,9 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public abstract class RequestHandler {
-    private static Logger logger = Log.getLogger();
+    private static Log log = Logger.getLogger();
 
     public static final String MIME_DEFAULT_BINARY = "application/octet-stream";
     public static final String MIME_JSON = "application/json";
@@ -84,10 +84,10 @@ public abstract class RequestHandler {
                     is );
             // response.addHeader("Content-Length", "" + file.length());
             response.addHeader("ETag", eTag);
-            logger.log(Level.INFO, "Serve file \"" + fileName + "\".");
+            log.info("Serve file \"" + fileName + "\".");
             return response;
         } catch (IOException e) {
-            logger.log(Level.WARNING, "File not found: " + fileName);
+            log.warn("File not found: " + fileName);
             // e.printStackTrace();
             return responseNotFound();
         }

@@ -1,25 +1,24 @@
 package sg.edu.ntu.xinzi.mapreduce;
 
+import org.apache.commons.logging.Log;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
-import org.apache.hadoop.mapreduce.lib.input.InvalidInputException;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
-import sg.edu.ntu.xinzi.util.Log;
+import sg.edu.ntu.xinzi.util.Logger;
 
 import java.io.IOException;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class NotDriver {
     static enum RecordCounters { IMAGE_SUBMITTED, IMAGE_PROCESSED };
 
-    private static Logger logger = Log.getLogger();
+    private static Log log = Logger.getLogger();
 
     public static void run() {
-        logger.log(Level.INFO, "Configuring Hadoop job.");
+        log.info("Configuring Hadoop job.");
         try {
             Configuration conf = new Configuration();
 
@@ -31,6 +30,7 @@ public class NotDriver {
 
             // job.setJarByClass(WordCount2.class);
 
+            job.setJarByClass(NotMapper.class);
             job.setInputFormatClass(NotInputFormat.class);
             job.setMapperClass(NotMapper.class);
             job.setMapOutputKeyClass(Text.class);
@@ -50,11 +50,11 @@ public class NotDriver {
             FileInputFormat.addInputPath(job, new Path("/input/")); // provide input directory
             FileOutputFormat.setOutputPath(job, new Path("/output/"));
 
-            logger.log(Level.INFO, "Start running Hadoop job.");
+            log.info("Start running Hadoop job.");
             if (job.waitForCompletion(true)) {
-                logger.log(Level.INFO, "Job completed.");
+                log.info("Job completed.");
             } else {
-                logger.log(Level.SEVERE, "Job error.");
+                log.info("Job error.");
             }
             // or
             // RunningJob runningJob = runJob(job); // or use submitJob()
@@ -64,7 +64,7 @@ public class NotDriver {
         int imageProcessed = RunningJob.getCounters(RecordCounters.IMAGE_PROCESSED);
         */
         } catch (IOException | ClassNotFoundException | InterruptedException e) {
-            logger.log(Level.SEVERE, "Exception during execution.");
+            log.error("Exception during execution.");
             e.printStackTrace();
         }
     }

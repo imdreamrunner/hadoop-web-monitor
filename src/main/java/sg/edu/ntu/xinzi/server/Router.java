@@ -1,17 +1,17 @@
 package sg.edu.ntu.xinzi.server;
 
 import fi.iki.elonen.NanoHTTPD;
+import org.apache.commons.logging.Log;
 import sg.edu.ntu.xinzi.handler.DefaultHandler;
 import sg.edu.ntu.xinzi.handler.RequestHandler;
-import sg.edu.ntu.xinzi.util.Log;
+import sg.edu.ntu.xinzi.util.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Router {
-    private static Logger logger = Log.getLogger();
+    private static Log log = Logger.getLogger();
 
     private List<RouteRecord> records = new ArrayList<>();
 
@@ -21,13 +21,13 @@ public class Router {
             record = new RouteRecord(method, uri, handler);
             records.add(record);
         } catch (InvalidHandlerException e) {
-            logger.log(Level.SEVERE, "Invalid handler");
+            log.error("Invalid handler");
             e.printStackTrace();
         }
     }
 
     public NanoHTTPD.Response handle(NanoHTTPD.IHTTPSession session) {
-        logger.log(Level.FINE, "Router trying to handle session ");
+        log.info("Router trying to handle session ");
         NanoHTTPD.Response response = null;
         for (RouteRecord record : records) {
             if (record.method == session.getMethod() && record.match(session.getUri())) try {
@@ -35,10 +35,10 @@ public class Router {
                 response = handler.getResponse(session);
                 break;
             } catch (InstantiationException|IllegalAccessException e) {
-                logger.log(Level.SEVERE, "Cannot create handler instance.");
+                log.error("Cannot create handler instance.");
                 e.printStackTrace();
             } catch (RequestHandler.RequestUnhandledException e) {
-                logger.log(Level.INFO, "Request unhandled by handler.");
+                log.info("Request unhandled by handler.");
                 e.printStackTrace();
             }
         }
@@ -46,7 +46,7 @@ public class Router {
             try {
                 response = (new DefaultHandler()).getResponse(session);
             } catch (RequestHandler.RequestUnhandledException e) {
-                logger.log(Level.SEVERE, "Cannot create default handler.");
+                log.error("Cannot create default handler.");
                 e.printStackTrace();
             }
         }

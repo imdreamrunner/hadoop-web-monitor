@@ -1,15 +1,13 @@
 package sg.edu.ntu.xinzi.server;
 
 import fi.iki.elonen.NanoHTTPD;
+import org.apache.commons.logging.Log;
 import sg.edu.ntu.xinzi.handler.JobRunHandler;
 import sg.edu.ntu.xinzi.handler.ResourceFileHandler;
-import sg.edu.ntu.xinzi.util.Log;
-
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import sg.edu.ntu.xinzi.util.Logger;
 
 public class Server extends NanoHTTPD {
-    private static Logger logger = Log.getLogger();
+    private static Log log = Logger.getLogger();
 
     public int port;
 
@@ -28,7 +26,7 @@ public class Server extends NanoHTTPD {
         Method method = session.getMethod();
         String uri = session.getUri();
 
-        logger.log(Level.FINE, method + " '" + uri + "' ");
+        log.info(method + " '" + uri + "' ");
 
         return router.handle(session);
     }

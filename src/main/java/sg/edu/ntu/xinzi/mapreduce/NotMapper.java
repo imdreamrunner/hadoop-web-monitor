@@ -1,28 +1,28 @@
 package sg.edu.ntu.xinzi.mapreduce;
 
+import org.apache.commons.logging.Log;
 import org.apache.hadoop.io.BytesWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.Writable;
 import org.apache.hadoop.mapreduce.Mapper;
-import sg.edu.ntu.xinzi.util.Log;
+import sg.edu.ntu.xinzi.util.Logger;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class NotMapper extends Mapper<Text, BytesWritable, Text, Text> {
-    private static Logger logger = Log.getLogger();
+    private static Log log = Logger.getLogger();
 
     @Override
     protected void setup(Context context) throws IOException, InterruptedException {
-        logger.log(Level.INFO, "Mapper being setup.");
+        log.info("Mapper being setup.");
     }
 
     @Override
     public void map(Text key, BytesWritable value, Context context) throws IOException, InterruptedException {
-        logger.log(Level.INFO, "Mapper starts working.");
+        log.info("Mapper starts working.");
 
         context.getCounter(NotDriver.RecordCounters.IMAGE_SUBMITTED).increment(1);
 

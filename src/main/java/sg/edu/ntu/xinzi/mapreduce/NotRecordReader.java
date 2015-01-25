@@ -1,5 +1,6 @@
 package sg.edu.ntu.xinzi.mapreduce;
 
+import org.apache.commons.logging.Log;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataInputStream;
 import org.apache.hadoop.fs.FileSystem;
@@ -11,14 +12,13 @@ import org.apache.hadoop.mapreduce.InputSplit;
 import org.apache.hadoop.mapreduce.RecordReader;
 import org.apache.hadoop.mapreduce.TaskAttemptContext;
 import org.apache.hadoop.mapreduce.lib.input.FileSplit;
-import sg.edu.ntu.xinzi.util.Log;
+import sg.edu.ntu.xinzi.util.Logger;
 
 import java.io.IOException;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class NotRecordReader extends RecordReader<Text, BytesWritable> {
-    private static Logger logger = Log.getLogger();
+    private static Log log = Logger.getLogger();
 
     // <key, value> <file name, file contents in bytes>
 
@@ -30,14 +30,14 @@ public class NotRecordReader extends RecordReader<Text, BytesWritable> {
 
     @Override
     public void initialize(InputSplit split, TaskAttemptContext context) throws IOException, InterruptedException {
-        logger.log(Level.INFO, "Record reader start initializing.");
+        log.info("Record reader start initializing.");
         this.fileSplit = (FileSplit) split;
         this.conf = context.getConfiguration();
     }
 
     @Override
     public boolean nextKeyValue() throws IOException, InterruptedException {
-        logger.log(Level.INFO, "Record reader get next key value.");
+        log.info("Record reader get next key value.");
         if (!processed) {
             key = new Text(fileSplit.getPath().getName());
 

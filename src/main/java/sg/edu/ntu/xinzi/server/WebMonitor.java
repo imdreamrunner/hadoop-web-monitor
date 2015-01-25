@@ -1,24 +1,23 @@
 package sg.edu.ntu.xinzi.server;
 
+import org.apache.commons.logging.Log;
 import sg.edu.ntu.xinzi.mapreduce.NotDriver;
-import sg.edu.ntu.xinzi.util.Log;
+import sg.edu.ntu.xinzi.util.Logger;
 
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class WebMonitor {
-    private static Logger logger = Log.getLogger();
+    private static Log log = Logger.getLogger();
     private static Server server;
 
     public static void main(String[] args) {
-        logger.info("Welcome to Web Monitor.");
+        log.info("Welcome to Web Monitor.");
         int port = 40080;
         if (args.length > 0) {
             try {
                 port = Integer.parseInt(args[0]);
             } catch (NumberFormatException e) {
-                logger.log(Level.SEVERE, "\"" + args[0] + "\" cannot be as port number");
+                log.error("\"" + args[0] + "\" cannot be as port number");
                 e.printStackTrace();
             }
         }
@@ -43,23 +42,23 @@ public class WebMonitor {
     }
 
     private static void startServer() {
-        logger.log(Level.INFO, "Trying to start server.");
+        log.info("Trying to start server.");
         if (server.isAlive()) {
-            logger.log(Level.WARNING, "Cannot start server: Server is alive");
+            log.warn("Cannot start server: Server is alive");
             return;
         }
         try {
             server.start();
         } catch (IOException e) {
-            logger.log(Level.SEVERE, "Cannot start server: IOException");
+            log.error("Cannot start server: IOException");
             e.printStackTrace();
         }
-        logger.log(Level.INFO, "Server started.");
+        log.info("Server started.");
     }
 
     private static void stopServer() {
-        logger.log(Level.INFO, "Trying to stop server.");
+        log.info("Trying to stop server.");
         server.stop();
-        logger.log(Level.INFO, "Server stopped.");
+        log.info("Server stopped.");
     }
 }

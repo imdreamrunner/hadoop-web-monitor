@@ -1,6 +1,7 @@
 package sg.edu.ntu.xinzi.util;
 
 import org.apache.commons.logging.LogFactory;
+import org.apache.commons.logging.Log;
 
 
 public class Logger {
@@ -37,8 +38,8 @@ public class Logger {
     }
     */
 
-    public static Logger getLogger() {
+    public static Log getLogger() {
         StackTraceElement myCaller = Thread.currentThread().getStackTrace()[2];
-        return LogFactory.getLog(myCaller.getClass());
+        return LogFactory.getLog(myCaller.getClassName());
     }
 }

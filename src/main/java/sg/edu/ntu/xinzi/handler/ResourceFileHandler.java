@@ -2,13 +2,13 @@ package sg.edu.ntu.xinzi.handler;
 
 import fi.iki.elonen.NanoHTTPD.Response;
 import fi.iki.elonen.NanoHTTPD.IHTTPSession;
-import sg.edu.ntu.xinzi.util.Log;
+import org.apache.commons.logging.Log;
+import sg.edu.ntu.xinzi.util.Logger;
 
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class ResourceFileHandler extends RequestHandler {
-    private static Logger logger = Log.getLogger();
+    private static Log log = Logger.getLogger();
 
     @Override
     public Response getResponse(IHTTPSession session) {
@@ -17,7 +17,7 @@ public class ResourceFileHandler extends RequestHandler {
             return responseRedirect("./index.html");
         }
         String fileName = uri.substring(1);
-        logger.log(Level.FINE, "Searching for file \"" + fileName + "\" on static folder.");
+        log.info("Searching for file \"" + fileName + "\" on static folder.");
         return responseFile(fileName);
     }
 }
