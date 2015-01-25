@@ -12,7 +12,7 @@ ${HADOOP_PREFIX}/sbin/start-dfs.sh
 ${HADOOP_PREFIX}/sbin/start-yarn.sh
 
 # Copy File
-${HADOOP_PREFIX}/bin/hdfs -mkdir /input
+${HADOOP_PREFIX}/bin/hdfs dfs -mkdir /input
 if [ -d ../test_images ]; then
-    ${HADOOP_PREFIX}/bin/hdfs -put ../test_images/* /input
+    ${HADOOP_PREFIX}/bin/hdfs dfs -put ../test_images/* /input
 fi
