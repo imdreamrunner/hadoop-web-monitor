@@ -9,9 +9,13 @@ import java.io.IOException;
 
 public class NotFeatureWritable implements Writable {
 
-    private String feature = "zhoushen wan sui";
+    private String feature = "empty feature";
 
-    public void NotFeatureWritable(String feature) {
+    public NotFeatureWritable() {
+
+    }
+
+    public NotFeatureWritable(String feature) {
         this.feature = feature;
     }
 
@@ -24,18 +28,6 @@ public class NotFeatureWritable implements Writable {
     public void write(DataOutput out) throws IOException {
         Text.writeString(out, feature);
     }
-
-    // @Override
-    // public int compareTo(NotFeatureWritable that) {
-    // }
-    // @Override
-    // public boolean equals(NotFeatureWritable that) {
-    //     if (!(that instanceof NotFeatureWritable))
-    //         return false;
-    // }
-    // @Override
-    // public int hashCode() {
-    // }
 
     public String toString() {
         return feature;

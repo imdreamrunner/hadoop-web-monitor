@@ -15,17 +15,13 @@ import java.io.IOException;
 import java.util.logging.Level;
 
 public class NotInputFormat extends FileInputFormat<Text, BytesWritable> {
-    private static Log log = Logger.getLogger();
-
     @Override
     protected boolean isSplitable(JobContext context, Path file) {
         return false;
     }
 
     @Override
-    public RecordReader<Text, BytesWritable> createRecordReader(InputSplit split, TaskAttemptContext context)
-            throws IOException, InterruptedException {
-        log.info("Create record reader.");
+    public RecordReader<Text, BytesWritable> createRecordReader(InputSplit split, TaskAttemptContext context) throws IOException, InterruptedException {
         NotRecordReader reader = new NotRecordReader();
         reader.initialize(split, context);
         return reader;
